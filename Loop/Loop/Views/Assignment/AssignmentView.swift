@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct AssignmentView: View {
+    
+    //This will probably be within the ProblemView
+    let db = Firestore.firestore()
+    
     var body: some View {
         VStack{
             //This title will be pulled from the database
@@ -28,22 +35,30 @@ struct AssignmentView: View {
                             Button(action: submitFeelingGood) {
                                 Text("😃")
                             }
-                            Button(action: submitFeelingGood) {
+                            Button(action: submitFeelingBad) {
                                 Text("🙁")
                             }
                         }
                     }
                     
                 }
-                
             }
         }
     }
+    
+    //These two submit functions will probably live inside ProblemView
     func submitFeelingGood(){
-        
+        db.collection("classes").document("MATH1220").collection("assignments").document("assign02").setData([
+            //1 is a placeholder - we want to add 1 to the current number stored.
+            "feeling-good" : 1
+            
+        ], merge: true)
     }
     func submitFeelingBad(){
-        
+        db.collection("classes").document("MATH1220").collection("assignments").document("assign02").setData([
+            //1 is a placeholder - we want to add 1 to the current number stored.
+            "feeling-bad" : 1
+        ], merge: true)
     }
 }
 
