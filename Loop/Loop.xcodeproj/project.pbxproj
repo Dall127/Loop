@@ -15,6 +15,9 @@
 		3006BC82253A88E300F8124C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3006BC81253A88E300F8124C /* Preview Assets.xcassets */; };
 		3006BC8D253A88E300F8124C /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BC8C253A88E300F8124C /* LoopTests.swift */; };
 		3006BC98253A88E300F8124C /* LoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BC97253A88E300F8124C /* LoopUITests.swift */; };
+		3006BCDE253AA57000F8124C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCDD253AA57000F8124C /* LoginView.swift */; };
+		3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCE2253AA58300F8124C /* NueromorphicButton.swift */; };
+		3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCE7253AA59700F8124C /* UIColorBridge.swift */; };
 		53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */; };
 		53A0B949253A9DC3007F4A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0B948253A9DC3007F4A8A /* AppDelegate.swift */; };
 		7D581720E790325B4535A82D /* Pods_LoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB3269FB02823C641120844 /* Pods_LoopTests.framework */; };
@@ -50,6 +53,9 @@
 		3006BC93253A88E300F8124C /* LoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3006BC97253A88E300F8124C /* LoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopUITests.swift; sourceTree = "<group>"; };
 		3006BC99253A88E300F8124C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3006BCDD253AA57000F8124C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3006BCE2253AA58300F8124C /* NueromorphicButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NueromorphicButton.swift; sourceTree = "<group>"; };
+		3006BCE7253AA59700F8124C /* UIColorBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorBridge.swift; path = Loop/Stylings/UIColorBridge.swift; sourceTree = SOURCE_ROOT; };
 		32F1122B2431453E54A1BCCB /* Pods_Loop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A8B2BDAD156EF4FDAD27C /* Pods-Loop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop.debug.xcconfig"; path = "Target Support Files/Pods-Loop/Pods-Loop.debug.xcconfig"; sourceTree = "<group>"; };
 		4AF3DAE8EFE153BCAA5EEFD4 /* Pods-LoopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopTests.debug.xcconfig"; path = "Target Support Files/Pods-LoopTests/Pods-LoopTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +181,7 @@
 		3006BCAF253A8FA500F8124C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3006BCC7253A9ADB00F8124C /* NueromorphicButton.swift */,
+				3006BCE2253AA58300F8124C /* NueromorphicButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 		3006BCB3253A911300F8124C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3006BCDD253AA57000F8124C /* LoginView.swift */,
 				3006BCB5253A912200F8124C /* Stylings */,
 				3006BCB4253A911A00F8124C /* Components */,
 			);
@@ -192,7 +199,6 @@
 		3006BCB4253A911A00F8124C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3006BCB7253A939700F8124C /* Login.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 		3006BCB5253A912200F8124C /* Stylings */ = {
 			isa = PBXGroup;
 			children = (
+				3006BCE7253AA59700F8124C /* UIColorBridge.swift */,
 			);
 			path = Stylings;
 			sourceTree = "<group>";
@@ -207,7 +214,6 @@
 		3006BCB6253A913100F8124C /* Stylings */ = {
 			isa = PBXGroup;
 			children = (
-				3006BCC2253A9A6C00F8124C /* UIColorBridge.swift */,
 			);
 			path = Stylings;
 			sourceTree = "<group>";
@@ -439,7 +445,9 @@
 			files = (
 				53A0B949253A9DC3007F4A8A /* AppDelegate.swift in Sources */,
 				3006BC7D253A88E200F8124C /* ContentView.swift in Sources */,
-				3006BCC8253A9ADB00F8124C /* NueromorphicButton.swift in Sources */,
+				3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */,
+				3006BCDE253AA57000F8124C /* LoginView.swift in Sources */,
+				3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */,
 				3006BC7B253A88E200F8124C /* LoopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
