@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        BaseCard(Title: "hello", BodyLabel: "world")
+		BaseCard(title: "hello") {
+			Text("Hi")
+		}
     }
 }
 
