@@ -18,6 +18,7 @@
 		3006BCDE253AA57000F8124C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCDD253AA57000F8124C /* LoginView.swift */; };
 		3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCE2253AA58300F8124C /* NueromorphicButton.swift */; };
 		3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCE7253AA59700F8124C /* UIColorBridge.swift */; };
+		3006BCF6253AB33400F8124C /* Logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3006BCF5253AB33400F8124C /* Logo.svg */; };
 		53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */; };
 		53A0B949253A9DC3007F4A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0B948253A9DC3007F4A8A /* AppDelegate.swift */; };
 		7D581720E790325B4535A82D /* Pods_LoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB3269FB02823C641120844 /* Pods_LoopTests.framework */; };
@@ -56,6 +57,7 @@
 		3006BCDD253AA57000F8124C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3006BCE2253AA58300F8124C /* NueromorphicButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NueromorphicButton.swift; sourceTree = "<group>"; };
 		3006BCE7253AA59700F8124C /* UIColorBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorBridge.swift; path = Loop/Stylings/UIColorBridge.swift; sourceTree = SOURCE_ROOT; };
+		3006BCF5253AB33400F8124C /* Logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Logo.svg; sourceTree = "<group>"; };
 		32F1122B2431453E54A1BCCB /* Pods_Loop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A8B2BDAD156EF4FDAD27C /* Pods-Loop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop.debug.xcconfig"; path = "Target Support Files/Pods-Loop/Pods-Loop.debug.xcconfig"; sourceTree = "<group>"; };
 		4AF3DAE8EFE153BCAA5EEFD4 /* Pods-LoopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopTests.debug.xcconfig"; path = "Target Support Files/Pods-LoopTests/Pods-LoopTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		3006BC79253A88E200F8124C /* Loop */ = {
 			isa = PBXGroup;
 			children = (
+				3006BCF4253AB32400F8124C /* Resources */,
 				3006BCB6253A913100F8124C /* Stylings */,
 				3006BCAF253A8FA500F8124C /* Components */,
 				3006BCAE253A8F7B00F8124C /* Services */,
@@ -216,6 +219,14 @@
 			children = (
 			);
 			path = Stylings;
+			sourceTree = "<group>";
+		};
+		3006BCF4253AB32400F8124C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3006BCF5253AB33400F8124C /* Logo.svg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		48024FEC44BC793E6A91B368 /* Frameworks */ = {
@@ -350,6 +361,7 @@
 				3006BC82253A88E300F8124C /* Preview Assets.xcassets in Resources */,
 				3006BC7F253A88E300F8124C /* Assets.xcassets in Resources */,
 				53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */,
+				3006BCF6253AB33400F8124C /* Logo.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

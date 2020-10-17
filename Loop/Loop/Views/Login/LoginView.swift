@@ -7,18 +7,36 @@
 
 import SwiftUI
 
-struct Login: View {
+struct LoginView: View {
+	@Environment(\.colorScheme) var colorScheme
+
 	var body: some View {
 		VStack {
-			Text("Logo")
-				.foregroundColor(Color.blue)
 			Spacer()
-			TextField("Username", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+			Image("Logo")
 			Spacer()
-			TextField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+			TextField("Username", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/).padding(.all, 20.0).textFieldStyle(RoundedBorderTextFieldStyle()).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+
+			TextField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/).padding(.all, 20.0).textFieldStyle(RoundedBorderTextFieldStyle()).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
 			Spacer()
 			HStack {
 				Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+					HStack( content:
+								{
+									
+									Text("Create User")
+										.fontWeight(.medium)
+										.padding(.trailing, -15.0);
+									Image(systemName: "person.crop.circle.badge.plus").padding(.leading, 20.0).font(Font.title.weight(.medium));
+								})
+					
+					
+					
+				}).buttonStyle(NeumorphicButtonStyle(bgColor: .systemGray6))
+				Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+					
+					
+					
 					HStack( content:
 								{
 									
@@ -27,11 +45,12 @@ struct Login: View {
 										.padding(.trailing, 20.0);
 									Image(systemName: "arrowshape.turn.up.right.fill").padding(.leading, 20.0).font(Font.title.weight(.medium));
 								})
-						.padding(.leading, 10.0)
+				
 					
 					
 					
-				}).buttonStyle(NeumorphicButtonStyle(bgColor: Color.neuBackground))
+				}).buttonStyle(NeumorphicButtonStyle(bgColor: .systemGray6))
+
 			}
 			
 			Spacer()
@@ -41,8 +60,8 @@ struct Login: View {
 	
 }
 
-struct Login_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
 	static var previews: some View {
-		Login()
+		LoginView()
 	}
 }
