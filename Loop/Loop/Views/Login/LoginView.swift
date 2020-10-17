@@ -9,6 +9,7 @@ import SwiftUI
 struct LoginView: View {
 	@Environment(\.colorScheme) var colorScheme
 	@State private var action: Int? = 0
+	@EnvironmentObject var session: SessionStore
 
 	var body: some View {
 		NavigationView() {
@@ -21,9 +22,8 @@ struct LoginView: View {
 				TextField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/).padding(.all, 20.0).textFieldStyle(RoundedBorderTextFieldStyle()).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
 				Spacer()
 				HStack {
-					NavigationLink(destination: CreateUserView()) {
 						Button(action: {}, label: {
-							NavigationLink(destination: CreateUserView()) {
+							NavigationLink(destination: CreateUserView().environmentObject(SessionStore())) {
 
 							HStack( content:
 										{
@@ -40,7 +40,6 @@ struct LoginView: View {
 							
 							}
 						}).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
-					}
 					
 					Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
 						

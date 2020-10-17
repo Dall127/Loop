@@ -91,10 +91,12 @@ class User {
 
 @main
 struct LoopApp: App {
+	@EnvironmentObject var session: SessionStore
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(SessionStore())
         }
     }
 }
