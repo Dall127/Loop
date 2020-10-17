@@ -95,6 +95,7 @@
 		3006BC79253A88E200F8124C /* Loop */ = {
 			isa = PBXGroup;
 			children = (
+				3006BCAB253A8E8400F8124C /* Views */,
 				3006BC7A253A88E200F8124C /* LoopApp.swift */,
 				3006BC7C253A88E200F8124C /* ContentView.swift */,
 				3006BC7E253A88E300F8124C /* Assets.xcassets */,
@@ -128,6 +129,13 @@
 				3006BC99253A88E300F8124C /* Info.plist */,
 			);
 			path = LoopUITests;
+			sourceTree = "<group>";
+		};
+		3006BCAB253A8E8400F8124C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
