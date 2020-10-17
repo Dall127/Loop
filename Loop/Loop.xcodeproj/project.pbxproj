@@ -263,11 +263,7 @@
 				3006BC73253A88E200F8124C /* Sources */,
 				3006BC74253A88E200F8124C /* Frameworks */,
 				3006BC75253A88E200F8124C /* Resources */,
-<<<<<<< Updated upstream
 				88727615AA3915C87E23955A /* [CP] Embed Pods Frameworks */,
-=======
-				B8B445D988C05D910722C5D7 /* [CP] Embed Pods Frameworks */,
->>>>>>> Stashed changes
 			);
 			buildRules = (
 			);
@@ -305,11 +301,7 @@
 				3006BC8F253A88E300F8124C /* Sources */,
 				3006BC90253A88E300F8124C /* Frameworks */,
 				3006BC91253A88E300F8124C /* Resources */,
-<<<<<<< Updated upstream
 				14ECD8A80D0158E69A3013A8 /* [CP] Embed Pods Frameworks */,
-=======
-				C018354D385C6A53520E8C20 /* [CP] Embed Pods Frameworks */,
->>>>>>> Stashed changes
 			);
 			buildRules = (
 			);
@@ -475,11 +467,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< Updated upstream
 		88727615AA3915C87E23955A /* [CP] Embed Pods Frameworks */ = {
-=======
-		B8B445D988C05D910722C5D7 /* [CP] Embed Pods Frameworks */ = {
->>>>>>> Stashed changes
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -496,26 +484,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Loop/Pods-Loop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< Updated upstream
-=======
-		C018354D385C6A53520E8C20 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Loop-LoopUITests/Pods-Loop-LoopUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Loop-LoopUITests/Pods-Loop-LoopUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Loop-LoopUITests/Pods-Loop-LoopUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
->>>>>>> Stashed changes
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
