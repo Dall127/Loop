@@ -4,7 +4,13 @@
 target 'Loop' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+<<<<<<< Updated upstream
 	pod 'Firebase/Database'
+=======
+
+	pod 'Firebase/Database'
+
+>>>>>>> Stashed changes
   # Pods for Loop
 	
   target 'LoopTests' do
