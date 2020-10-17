@@ -1,6 +1,0 @@
-framework module Pods_Loop_LoopUITests {
-  umbrella header "Pods-Loop-LoopUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
