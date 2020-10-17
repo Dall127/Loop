@@ -90,3 +90,8 @@ fastlane/test_output
 iOSInjectionProject/
 Loop/.DS_Store
 Loop/.DS_Store
+Loop/Podfile.lock
+Loop/Pods/Manifest.lock
+Loop/Pods/Pods.xcodeproj/project.pbxproj
+Loop/Loop.xcodeproj/project.pbxproj
+Loop/.DS_Store
