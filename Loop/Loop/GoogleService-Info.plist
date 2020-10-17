@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>489689107669-11c5k4n28b3562oeo2nqkc3ht3f0ql82.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.489689107669-11c5k4n28b3562oeo2nqkc3ht3f0ql82</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAzY8J6fZPP27MaQDX6jM0a6CLIWIjV0c0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>489689107669</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.HackTheU.Loop</string>
+	<key>PROJECT_ID</key>
+	<string>loop-d3ef8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>loop-d3ef8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:489689107669:ios:0301f5771089ae1d6de65c</string>
+	<key>DATABASE_URL</key>
+	<string>https://loop-d3ef8.firebaseio.com</string>
+</dict>
+</plist>
