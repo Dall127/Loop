@@ -95,6 +95,7 @@
 		3006BC79253A88E200F8124C /* Loop */ = {
 			isa = PBXGroup;
 			children = (
+				3006BCB6253A913100F8124C /* Stylings */,
 				3006BCAF253A8FA500F8124C /* Components */,
 				3006BCAE253A8F7B00F8124C /* Services */,
 				3006BCAB253A8E8400F8124C /* Views */,
@@ -136,6 +137,7 @@
 		3006BCAB253A8E8400F8124C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3006BCB3253A911300F8124C /* Login */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,7 +145,6 @@
 		3006BCAE253A8F7B00F8124C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3006BCB0253A8FFA00F8124C /* Login */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -155,27 +156,34 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		3006BCB0253A8FFA00F8124C /* Login */ = {
+		3006BCB3253A911300F8124C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3006BCB2253A901D00F8124C /* Styling */,
-				3006BCB1253A900E00F8124C /* Components */,
+				3006BCB5253A912200F8124C /* Stylings */,
+				3006BCB4253A911A00F8124C /* Components */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		3006BCB1253A900E00F8124C /* Components */ = {
+		3006BCB4253A911A00F8124C /* Components */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		3006BCB2253A901D00F8124C /* Styling */ = {
+		3006BCB5253A912200F8124C /* Stylings */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Styling;
+			path = Stylings;
+			sourceTree = "<group>";
+		};
+		3006BCB6253A913100F8124C /* Stylings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stylings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
