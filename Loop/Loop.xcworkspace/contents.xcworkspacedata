@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ClassView.swift">
+   </FileRef>
+   <FileRef
       location = "group:Loop.xcodeproj">
    </FileRef>
    <FileRef

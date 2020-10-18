@@ -14,10 +14,18 @@ import Combine
 
 struct ContentView: View {
 	@EnvironmentObject var session: SessionStore
+	
+	var body: some View {
+		if(session.session != nil) {
+			ClassView().environmentObject(session)
+		}
+		else{
+			LoginView().environmentObject(session)
 
-    var body: some View {
-        LoginView().environmentObject(SessionStore())
-    }
+		}
+
+	
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
