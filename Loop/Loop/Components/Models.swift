@@ -6,7 +6,7 @@
 //
 
 
-
+import SwiftUI
 import Foundation
 import FirebaseFirestore
 import SwiftUI
@@ -33,8 +33,21 @@ struct StudentViewModel: View {
 					let tempArray = data["classes"] as? Array ?? []
 					for i in tempArray {
 						let docID = (i as? DocumentReference)?.documentID
-						self.student.classes.append(docID!)
-						
+						db.collection("classes").document(docID!)
+							.addSnapshotListener { documentSnapshot, error in
+								guard let document = documentSnapshot else {
+									print("Error fetching document: \(error!)")
+									return
+								}
+								guard let data = document.data() else {
+									print("Document data was empty.")
+									return
+								}
+								let classData = data["name"]
+								self.student.classes.append(classData as! String)
+								
+								
+							}
 					}
 				}
 		})
@@ -51,7 +64,7 @@ struct StudentViewModel: View {
 struct Student: Identifiable {
 	var id = UUID()
 	var classes = Array<String>()
-
+	
 }
 
 
@@ -88,7 +101,7 @@ struct TeacherViewModel: View {
 									print("Document data was empty.")
 									return
 								}
-								var classData = data["name"]
+								let classData = data["name"]
 								self.teacher.classes.append(classData as! String)
 
 								
