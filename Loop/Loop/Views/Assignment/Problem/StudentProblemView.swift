@@ -15,15 +15,14 @@ import FirebaseFirestoreSwift
 struct StudentProblemView: View {
     //Setup
     let db = Firestore.firestore()
-    let problemName: String
     let documentPath: String
     
-    init(problemName : String, documentPath : String) {
-        self.problemName = problemName
+    init(documentPath : String) {
         self.documentPath = documentPath
     }
     
     var body: some View {
+        let problemName = getProblemName()
         //Query name from database
         GroupBox(label: Text(problemName)) {
             
@@ -37,6 +36,24 @@ struct StudentProblemView: View {
                 }
             }
         }
+    }
+    
+    func getProblemName() -> String {
+        var problemName = ""
+        let docRef = db.document(documentPath)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                let name = data?["name"] as? String ?? ""
+                
+                problemName = name
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+        return problemName
     }
     
     func submitFeelingGood(){
@@ -87,6 +104,6 @@ struct StudentProblemView: View {
 
 struct StudentProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        StudentProblemView(problemName: "Problem 1", documentPath: "classes/MATH1220/assignments/assign02/problems/problem1")
+        StudentProblemView(documentPath: "classes/MATH1220/assignments/assign02/problems/problem1")
     }
 }
