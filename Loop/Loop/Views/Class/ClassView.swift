@@ -178,7 +178,7 @@ struct ClassView: View {
 
 	}
     }
-}
+
 
 
 
