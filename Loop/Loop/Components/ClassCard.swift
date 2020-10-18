@@ -10,13 +10,13 @@ import SwiftUI
 struct ClassCard: View {
      
         let className: String
-        let professor: String
+       // let professor: String
         
         
         
     init(className:String, professor:String){
         self.className =  className
-        self.professor =  professor
+       // self.professor =  professor
     }
     var body: some View {
         VStack {
@@ -32,9 +32,9 @@ struct ClassCard: View {
                         .fontWeight(.black)
                         .foregroundColor(.primary)
                         .lineLimit(3)
-                    Text(professor.uppercased())
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+//                    Text(professor.uppercased())
+//                        .font(.caption)
+//                        .foregroundColor(.secondary)
                 }
                 .layoutPriority(100)
  
@@ -54,6 +54,6 @@ struct ClassCard: View {
 
 struct ClassCard_Previews: PreviewProvider {
     static var previews: some View {
-        ClassCard(className: "CS 2420: Algorithms & Data Structures - 017", professor: "Doctor Parker")
+        ClassCard(className: "CS 2420: Algorithms & Data Structures - 017")
     }
 }
