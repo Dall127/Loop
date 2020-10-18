@@ -15,12 +15,19 @@ import FirebaseFirestoreSwift
 struct StudentProblemView: View {
     //Setup
     let db = Firestore.firestore()
-
+    let problemName: String
+    let documentPath: String
+    
+    init(problemName : String, documentPath : String) {
+        self.problemName = problemName
+        self.documentPath = documentPath
+    }
     
     var body: some View {
         //Query name from database
-        GroupBox(label: Text("Problem 1")) {
+        GroupBox(label: Text(problemName)) {
             
+            //Replace with a StudentPollView
             HStack{
                 Button(action: submitFeelingGood) {
                     Text("😃")
@@ -31,7 +38,7 @@ struct StudentProblemView: View {
             }
         }
     }
-    //These two submit functions will probably live inside ProblemView
+    
     func submitFeelingGood(){
         incrementTransaction(fieldName: "feeling-good")
     }
@@ -40,7 +47,7 @@ struct StudentProblemView: View {
     }
     
     func incrementTransaction(fieldName: String){
-        let problemRef = db.collection("classes").document("MATH1220").collection("assignments").document("assign02").collection("problems").document("problem1")
+        let problemRef = db.document(documentPath)
         db.runTransaction({ (transaction, errorPointer) -> Any? in
             let sfDocument: DocumentSnapshot
             do {
@@ -80,6 +87,6 @@ struct StudentProblemView: View {
 
 struct StudentProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        StudentProblemView()
+        StudentProblemView(problemName: "Problem 1", documentPath: "classes/MATH1220/assignments/assign02/problems/problem1")
     }
 }

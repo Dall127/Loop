@@ -10,7 +10,7 @@ import SwiftUI
 struct StudentAssignmentView: View {
     var body: some View {
         AssignmentView {
-            StudentProblemView()
+            StudentProblemView(problemName: "Problem 1", documentPath: "classes/MATH1220/assignments/assign02/problems/problem1")
         }
     }
 }
