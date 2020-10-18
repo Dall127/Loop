@@ -15,41 +15,43 @@ struct StudentAssignmentView: View {
         self.assignmentPath = assignmentPath
     }
     var body: some View {
-        let documentPaths = fetchDocumentPaths()
+        let documentPaths: Array<String> = self.fetchDocumentPaths()
         AssignmentView {
             VStack{
                 ForEach(0..<documentPaths.count) { index in
                     self.buildView(path: documentPaths[index])
                 }
-                
             }
             
         }
     }
     
     func buildView(path: String) -> StudentProblemView {
+        print("view built")
         return StudentProblemView(documentPath: path)
     }
     
     func fetchDocumentPaths() -> Array<String>{
         var paths = [String]()
         db.document(assignmentPath).collection("problems").addSnapshotListener { (querySnapshot, err) in
-            if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        let currentDocumentPath = document.reference.path
-                        paths.append(currentDocumentPath)
-                }
+            guard let documents = querySnapshot?.documents else {
+                print("No documents") // the printing is done here
+                return
             }
+            for queryDocumentSnapshot in documents {
+                let currentDocumentPath = queryDocumentSnapshot.reference.path
+                paths.append(currentDocumentPath)
+            }
+            
         }
+        print(paths)
         return paths
     }
 }
 
 struct StudentAssignmentView_Previews: PreviewProvider {
     static var previews: some View {
-        StudentAssignmentView(assignmentPath: "assign02")
+        StudentAssignmentView(assignmentPath: "classes/MATH1220/assignments/assign02")
     }
 }
 

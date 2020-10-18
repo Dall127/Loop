@@ -16,15 +16,16 @@ struct StudentProblemView: View {
     //Setup
     let db = Firestore.firestore()
     let documentPath: String
+
     
     init(documentPath : String) {
         self.documentPath = documentPath
     }
     
+    
     var body: some View {
-        let problemName = getProblemName()
         //Query name from database
-        GroupBox(label: Text(problemName)) {
+        GroupBox(label: Text(getProblemName())) {
             
             //Replace with a StudentPollView
             HStack{
@@ -45,7 +46,7 @@ struct StudentProblemView: View {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                let name = data?["name"] as? String ?? ""
+                let name = data!["name"] as? String ?? ""
                 
                 problemName = name
                 
