@@ -26,6 +26,11 @@
 		30CB50CB253BF09C00AA88CF /* CustomNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB50CA253BF09C00AA88CF /* CustomNavigator.swift */; };
 		30CB50D7253C086200AA88CF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB50D6253C086200AA88CF /* Models.swift */; };
 		53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */; };
+		53F87C20253C0EE400B4886F /* TeacherAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1A253C0EE300B4886F /* TeacherAssignmentView.swift */; };
+		53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1B253C0EE300B4886F /* AssignmentView.swift */; };
+		53F87C22253C0EE400B4886F /* TeacherProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1D253C0EE300B4886F /* TeacherProblemView.swift */; };
+		53F87C23253C0EE400B4886F /* StudentProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1E253C0EE300B4886F /* StudentProblemView.swift */; };
+		53F87C24253C0EE400B4886F /* StudentAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1F253C0EE300B4886F /* StudentAssignmentView.swift */; };
 		7D581720E790325B4535A82D /* Pods_LoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB3269FB02823C641120844 /* Pods_LoopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,9 +76,16 @@
 		30CB50D6253C086200AA88CF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Loop/Components/Models.swift; sourceTree = SOURCE_ROOT; };
 		32F1122B2431453E54A1BCCB /* Pods_Loop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A8B2BDAD156EF4FDAD27C /* Pods-Loop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop.debug.xcconfig"; path = "Target Support Files/Pods-Loop/Pods-Loop.debug.xcconfig"; sourceTree = "<group>"; };
+		452F464E253ADB68005C565C /* BaseCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCard.swift; sourceTree = "<group>"; };
+		452F4656253C0A3F005C565C /* ClassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCard.swift; sourceTree = "<group>"; };
 		4AF3DAE8EFE153BCAA5EEFD4 /* Pods-LoopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopTests.debug.xcconfig"; path = "Target Support Files/Pods-LoopTests/Pods-LoopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F09CD62CEF7D63824F9A8DE /* Pods-Loop-LoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop-LoopUITests.release.xcconfig"; path = "Target Support Files/Pods-Loop-LoopUITests/Pods-Loop-LoopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53F87C1A253C0EE300B4886F /* TeacherAssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAssignmentView.swift; sourceTree = "<group>"; };
+		53F87C1B253C0EE300B4886F /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
+		53F87C1D253C0EE300B4886F /* TeacherProblemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherProblemView.swift; sourceTree = "<group>"; };
+		53F87C1E253C0EE300B4886F /* StudentProblemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProblemView.swift; sourceTree = "<group>"; };
+		53F87C1F253C0EE300B4886F /* StudentAssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentAssignmentView.swift; sourceTree = "<group>"; };
 		9AB3269FB02823C641120844 /* Pods_LoopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EC0E7ACE6C50B2F333B5EE /* Pods-Loop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop.release.xcconfig"; path = "Target Support Files/Pods-Loop/Pods-Loop.release.xcconfig"; sourceTree = "<group>"; };
 		B442FB5B8EA229560EE83F60 /* Pods-LoopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopTests.release.xcconfig"; path = "Target Support Files/Pods-LoopTests/Pods-LoopTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +190,7 @@
 		3006BCAB253A8E8400F8124C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				53F87C19253C0EE300B4886F /* Assignment */,
 				30CB50C4253BD83B00AA88CF /* Class */,
 				30CB4FFE253B5D9000AA88CF /* CreateUser */,
 				3006BCB3253A911300F8124C /* Login */,
@@ -195,9 +208,9 @@
 		3006BCAF253A8FA500F8124C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				30CB50D6253C086200AA88CF /* Models.swift */,
-				30CB50CA253BF09C00AA88CF /* CustomNavigator.swift */,
+
 				3006BCE2253AA58300F8124C /* NueromorphicButton.swift */,
+				452F4656253C0A3F005C565C /* ClassCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -284,6 +297,26 @@
 				9AB3269FB02823C641120844 /* Pods_LoopTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53F87C19253C0EE300B4886F /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				53F87C1A253C0EE300B4886F /* TeacherAssignmentView.swift */,
+				53F87C1B253C0EE300B4886F /* AssignmentView.swift */,
+				53F87C1C253C0EE300B4886F /* Problem */,
+				53F87C1F253C0EE300B4886F /* StudentAssignmentView.swift */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		53F87C1C253C0EE300B4886F /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				53F87C1D253C0EE300B4886F /* TeacherProblemView.swift */,
+				53F87C1E253C0EE300B4886F /* StudentProblemView.swift */,
+			);
+			path = Problem;
 			sourceTree = "<group>";
 		};
 		FE78BB2A89E65344165305D6 /* Pods */ = {
@@ -546,7 +579,9 @@
 				30CB50C6253BD84900AA88CF /* ClassView.swift in Sources */,
 				3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */,
 				3006BCDE253AA57000F8124C /* LoginView.swift in Sources */,
+				53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */,
 				3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */,
+				452F464F253ADB68005C565C /* BaseCard.swift in Sources */,
 				3006BC7B253A88E200F8124C /* LoopApp.swift in Sources */,
 				30CB50D7253C086200AA88CF /* Models.swift in Sources */,
 			);
