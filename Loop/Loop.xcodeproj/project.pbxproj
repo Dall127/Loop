@@ -30,7 +30,6 @@
 		535E533C253CC70A00F17135 /* StudentProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1E253C0EE300B4886F /* StudentProblemView.swift */; };
 		535E5340253CC70F00F17135 /* TeacherProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1D253C0EE300B4886F /* TeacherProblemView.swift */; };
 		53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */; };
-		53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1B253C0EE300B4886F /* AssignmentView.swift */; };
 		7D581720E790325B4535A82D /* Pods_LoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB3269FB02823C641120844 /* Pods_LoopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +80,6 @@
 		4AF3DAE8EFE153BCAA5EEFD4 /* Pods-LoopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopTests.debug.xcconfig"; path = "Target Support Files/Pods-LoopTests/Pods-LoopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F09CD62CEF7D63824F9A8DE /* Pods-Loop-LoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop-LoopUITests.release.xcconfig"; path = "Target Support Files/Pods-Loop-LoopUITests/Pods-Loop-LoopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		53F87C1B253C0EE300B4886F /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		53F87C1D253C0EE300B4886F /* TeacherProblemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherProblemView.swift; sourceTree = "<group>"; };
 		53F87C1E253C0EE300B4886F /* StudentProblemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StudentProblemView.swift; path = Loop/Views/Assignment/Problem/StudentProblemView.swift; sourceTree = SOURCE_ROOT; };
 		53F87C1F253C0EE300B4886F /* ProblemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProblemsView.swift; path = Loop/Views/Assignment/ProblemsView.swift; sourceTree = SOURCE_ROOT; };
@@ -303,7 +301,6 @@
 		53F87C19253C0EE300B4886F /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				53F87C1B253C0EE300B4886F /* AssignmentView.swift */,
 				53F87C1C253C0EE300B4886F /* Problem */,
 				53F87C1F253C0EE300B4886F /* ProblemsView.swift */,
 			);
@@ -581,7 +578,6 @@
 				30CB515D253C674F00AA88CF /* BaseCard.swift in Sources */,
 				3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */,
 				3006BCDE253AA57000F8124C /* LoginView.swift in Sources */,
-				53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */,
 				535E5340253CC70F00F17135 /* TeacherProblemView.swift in Sources */,
 				3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */,
 				535E533C253CC70A00F17135 /* StudentProblemView.swift in Sources */,
