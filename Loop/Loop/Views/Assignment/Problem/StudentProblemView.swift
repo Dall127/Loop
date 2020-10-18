@@ -40,11 +40,11 @@ struct StudentProblemView: View {
     }
     
     func incrementTransaction(fieldName: String){
-        let assignmentRef = db.collection("classes").document("MATH1220").collection("assignments").document("assign02")
+        let problemRef = db.collection("classes").document("MATH1220").collection("assignments").document("assign02").collection("problems").document("problem1")
         db.runTransaction({ (transaction, errorPointer) -> Any? in
             let sfDocument: DocumentSnapshot
             do {
-                try sfDocument = transaction.getDocument(assignmentRef)
+                try sfDocument = transaction.getDocument(problemRef)
             } catch let fetchError as NSError {
                 errorPointer?.pointee = fetchError
                 return nil
@@ -64,7 +64,7 @@ struct StudentProblemView: View {
 
             // Note: this could be done without a transaction
             //       by updating the count using FieldValue.increment()
-            transaction.updateData([fieldName: oldCount + 1], forDocument: assignmentRef)
+            transaction.updateData([fieldName: oldCount + 1], forDocument: problemRef)
             return nil
         }) { (object, error) in
             if let error = error {
