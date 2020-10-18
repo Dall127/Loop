@@ -16,7 +16,6 @@ struct AssignmentView<Content: View>: View {
             self.content = content()
     }
     
-    //This will probably be within the ProblemView
     let db = Firestore.firestore()
     
     var body: some View {
@@ -34,17 +33,6 @@ struct AssignmentView<Content: View>: View {
                 //Each ProblemView needs to get its data from firebase
                 VStack {
                     self.content
-//                    GroupBox(label: Text("Problem 1")) {
-//                        
-//                        HStack{
-//                            Button(action: submitFeelingGood) {
-//                                Text("😃")
-//                            }
-//                            Button(action: submitFeelingBad) {
-//                                Text("🙁")
-//                            }
-//                        }
-//                    }
                     
                 }
             }
