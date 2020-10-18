@@ -52,7 +52,7 @@ struct ClassView: View {
 							NavigationLink(
 								destination: AssignmentsView(aAssignmentHolder: aAssignment(name: "", classID: Any.self, aClass: aClass)),
 								label: {
-									AssignmentCard(aClass: aClass, cellHeight: 200, cellWidth: 300)
+									BaseCard(aClassHolder: aClass, cellHeight: 200, cellWidth: 300)
 									{
 										Text("hehe")
 									}

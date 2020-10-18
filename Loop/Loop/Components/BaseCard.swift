@@ -9,14 +9,14 @@ import SwiftUI
 import Foundation
 
 struct BaseCard<Content>: View where Content: View {
-	let title: String
+	let aClassHolder: aClass
 	let content: Content
     let cellHeight: CGFloat
     let cellWidth: CGFloat
     
 	
-    init(title: String, cellHeight: CGFloat,cellWidth: CGFloat, @ViewBuilder content: @escaping () -> Content) {
-		self.title = title
+    init(aClassHolder: aClass, cellHeight: CGFloat,cellWidth: CGFloat, @ViewBuilder content: @escaping () -> Content) {
+		self.aClassHolder = aClassHolder
 		self.content = content()
         self.cellHeight = cellHeight
         self.cellWidth = cellWidth
@@ -37,7 +37,7 @@ struct BaseCard<Content>: View where Content: View {
                 .overlay(
 					VStack{
 						HStack {
-							Text(title)
+							Text(aClassHolder.className)
 								.font(.title)
 								.fontWeight(.black)
 								.foregroundColor(.black)
@@ -62,12 +62,4 @@ struct BaseCard<Content>: View where Content: View {
 }
 
 
-struct BaseCard_Previews: PreviewProvider {
-    static var previews: some View {
-        BaseCard(title:"Assignments", cellHeight: 150.0, cellWidth: 300) {
-            Text("ratgirl123321 peepeepoopoo sir isaac newton inveted calculus like bro what, the fitness gram pacer test")
-    
-		}
-    }
-}
 
