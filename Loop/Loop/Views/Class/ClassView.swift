@@ -18,7 +18,11 @@ struct ClassView: View {
 
 
     var body: some View {
-		TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher)
+		TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher).environmentObject(session)
+		NavigationView {
+			
+			
+		
 			VStack {
 
 				if(self.isTeacher) {
@@ -43,12 +47,16 @@ struct ClassView: View {
 						   })
 					List {
 						ForEach(self.teacher.classes, id: \.self) {aClass in
-							BaseCard(title: aClass, cellHeight: 200, cellWidth: 300)
-							{
-								Text("hehe")
-							}
-							.padding(.vertical, 20.0)
-
+							NavigationLink(
+								destination: AssignmentsView(aAssignmentHolder: aAssignment(name: "", classID: Any.self, aClass: aClass)),
+								label: {
+									AssignmentCard(aClass: aClass, cellHeight: 200, cellWidth: 300)
+									{
+										Text("hehe")
+									}
+									.padding(.vertical, 20.0)
+								})
+							
 							//					Put link here to the class, and	You're going to want to pass in random generated code
 
 						}
@@ -128,6 +136,7 @@ struct ClassView: View {
 				
 				
 			}
+		}
 
 	}
 }
