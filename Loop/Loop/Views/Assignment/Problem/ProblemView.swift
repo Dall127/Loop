@@ -12,20 +12,29 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 
-struct StudentProblemView: View {
-    //Setup
+struct ProblemView: View {
+    @State var teacher = Teacher()
+    @State var isTeacher : Bool = false
+    @State var student = Student()
+    @State var isStudent: Bool = false
+    @EnvironmentObject var session: SessionStore
+    
     let db = Firestore.firestore()
     let documentPath: String
-
+    let problemName: String
     
-    init(documentPath : String) {
+    init(problemName: String, documentPath : String) {
         self.documentPath = documentPath
+        self.problemName = problemName
     }
     
     
     var body: some View {
+        TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher)
+        StudentViewModel(isStudent: $isStudent, student: $student)
+        
         //Query name from database
-        GroupBox(label: Text(getProblemName())) {
+        GroupBox(label: Text(problemName)) {
             
             //Replace with a StudentPollView
             HStack{
@@ -37,24 +46,6 @@ struct StudentProblemView: View {
                 }
             }
         }
-    }
-    
-    func getProblemName() -> String {
-        var problemName = ""
-        let docRef = db.document(documentPath)
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                let name = data!["name"] as? String ?? ""
-                
-                problemName = name
-                
-            } else {
-                print("Document does not exist")
-            }
-        }
-        return problemName
     }
     
     func submitFeelingGood(){
@@ -105,6 +96,6 @@ struct StudentProblemView: View {
 
 struct StudentProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        StudentProblemView(documentPath: "classes/MATH1220/assignments/assign02/problems/problem1")
+        ProblemView(problemName: "Problem 1", documentPath: "classes/MATH1220/assignments/assign02/problems/problem1")
     }
 }
