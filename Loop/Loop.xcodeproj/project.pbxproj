@@ -32,7 +32,7 @@
 		45360A82253CCFA700B414A8 /* AddClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45360A81253CCFA700B414A8 /* AddClassView.swift */; };
 		45360A86253CF85700B414A8 /* ClassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F4656253C0A3F005C565C /* ClassCard.swift */; };
 		53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */; };
-		53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1B253C0EE300B4886F /* AssignmentView.swift */; };
+		53F87C21253C0EE400B4886F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7D581720E790325B4535A82D /* Pods_LoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB3269FB02823C641120844 /* Pods_LoopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -309,8 +309,6 @@
 		53F87C19253C0EE300B4886F /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				53F87C1A253C0EE300B4886F /* TeacherAssignmentView.swift */,
-				53F87C1B253C0EE300B4886F /* AssignmentView.swift */,
 				30BDF53C253CCB3A0081A9CB /* AssignmentsView.swift */,
 				53F87C1C253C0EE300B4886F /* Problem */,
 			);
@@ -590,7 +588,7 @@
 				3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */,
 				3006BCDE253AA57000F8124C /* LoginView.swift in Sources */,
 				45360A82253CCFA700B414A8 /* AddClassView.swift in Sources */,
-				53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */,
+				53F87C21253C0EE400B4886F /* (null) in Sources */,
 				3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */,
 				3006BC7B253A88E200F8124C /* LoopApp.swift in Sources */,
 				30CB50D7253C086200AA88CF /* Models.swift in Sources */,
@@ -754,7 +752,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Loop/Preview Content\"";
-				DEVELOPMENT_TEAM = 5X58XUL4N3;
+				DEVELOPMENT_TEAM = 8VN6HQF9BC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Loop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -762,7 +760,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheULissaRamos.Loop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheU.Loop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -777,7 +775,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Loop/Preview Content\"";
-				DEVELOPMENT_TEAM = 5X58XUL4N3;
+				DEVELOPMENT_TEAM = 8VN6HQF9BC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Loop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -785,7 +783,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheULissaRamos.Loop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheU.Loop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

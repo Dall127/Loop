@@ -66,7 +66,7 @@ struct ClassView: View {
 
 				}
                 
-                if(self.isStudent) {
+                else if(self.isStudent) {
                     Button(action: {},
                            label: {
                             NavigationLink(destination: AddClassView(existingClasses: self.student.classes).environmentObject(session)) {
@@ -99,8 +99,10 @@ struct ClassView: View {
 
                         }
                     }
+				}
+					
 
-                }
+			
 
 				else {
 					Text("Are you a Student or a Teacher?")
@@ -175,9 +177,8 @@ struct ClassView: View {
 				
 			}
 		}
-
 	}
-    }
+}
 
 
 

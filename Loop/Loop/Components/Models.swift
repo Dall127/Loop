@@ -28,7 +28,6 @@ struct StudentViewModel: View {
 						print("Document data was empty.")
 						return
 					}
-					self.isStudent = true
 					self.student.classes = []
 					let tempArray = data["classes"] as? Array ?? []
 					for i in tempArray {
@@ -49,6 +48,8 @@ struct StudentViewModel: View {
 								
 							}
 					}
+					self.isStudent = true
+
 				}
 		})
 	}
@@ -87,7 +88,6 @@ struct TeacherViewModel: View {
 						print("Document data was empty.")
 						return
 					}
-					self.isTeacher = true
 					self.teacher.classes = []
 					let tempArray = data["classes"] as? Array ?? []
 					for i in tempArray {
@@ -108,7 +108,10 @@ struct TeacherViewModel: View {
 								
 							}
 					}
+					self.isTeacher = true
+
 				}
+
 		})
 	}
 }
