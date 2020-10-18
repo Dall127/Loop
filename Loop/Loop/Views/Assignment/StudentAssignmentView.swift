@@ -9,7 +9,9 @@ import SwiftUI
 
 struct StudentAssignmentView: View {
     var body: some View {
-        AssignmentView()
+        AssignmentView {
+            StudentProblemView()
+        }
     }
 }
 

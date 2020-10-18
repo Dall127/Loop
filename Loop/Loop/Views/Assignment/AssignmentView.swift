@@ -10,7 +10,11 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct AssignmentView: View {
+struct AssignmentView<Content: View>: View {
+    let content: Content
+    init(@ViewBuilder content: () -> Content) {
+            self.content = content()
+    }
     
     //This will probably be within the ProblemView
     let db = Firestore.firestore()
@@ -29,17 +33,18 @@ struct AssignmentView: View {
                 //This should be a VStack of Cards that take in a ProblemView
                 //Each ProblemView needs to get its data from firebase
                 VStack {
-                    GroupBox(label: Text("Problem 1")) {
-                        
-                        HStack{
-                            Button(action: submitFeelingGood) {
-                                Text("😃")
-                            }
-                            Button(action: submitFeelingBad) {
-                                Text("🙁")
-                            }
-                        }
-                    }
+                    self.content
+//                    GroupBox(label: Text("Problem 1")) {
+//                        
+//                        HStack{
+//                            Button(action: submitFeelingGood) {
+//                                Text("😃")
+//                            }
+//                            Button(action: submitFeelingBad) {
+//                                Text("🙁")
+//                            }
+//                        }
+//                    }
                     
                 }
             }
@@ -64,6 +69,8 @@ struct AssignmentView: View {
 
 struct AssignmentView_Previews: PreviewProvider {
     static var previews: some View {
-        AssignmentView()
+        AssignmentView(){
+            Text("Placeholder")
+        }
     }
 }
