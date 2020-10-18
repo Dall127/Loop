@@ -12,7 +12,7 @@ struct CreateClassView: View {
 	@Environment(\.presentationMode) var presentation
 	@EnvironmentObject var session: SessionStore
 
-	var existingClasses : Array<String>
+	var existingClasses : Array<aClass>
 	@State var randomID = ""
 	@State var className = ""
 	@State var showingAlert = false
@@ -47,6 +47,7 @@ struct CreateClassView: View {
 					
 					db.collection("classes").document(randomID).setData([
 						"name": className,
+						"code": randomID,
 						
 					]) { err in
 						if let err = err {
@@ -96,6 +97,6 @@ struct CreateClassView: View {
 
 struct CreateClassView_Previews: PreviewProvider {
     static var previews: some View {
-		CreateClassView(existingClasses: Array<String>())
+		CreateClassView(existingClasses: Array<aClass>())
     }
 }

@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Foundation
-import FirebaseFirestore
+import Firebase
 import SwiftUI
 struct StudentViewModel: View {
 	@EnvironmentObject var session: SessionStore
@@ -72,6 +72,7 @@ struct TeacherViewModel: View {
 	@EnvironmentObject var session: SessionStore
 	@Binding var isTeacher : Bool
 	@Binding var teacher : Teacher
+	@State var classes = Array<String>()
 	let db = Firestore.firestore()
 	
 	var body: some View {
@@ -102,7 +103,7 @@ struct TeacherViewModel: View {
 									return
 								}
 								let classData = data["name"]
-								self.teacher.classes.append(classData as! String)
+								self.teacher.classes.append(aClass(className: classData as! String, classCode: docID!))
 
 								
 							}
@@ -111,49 +112,88 @@ struct TeacherViewModel: View {
 		})
 	}
 }
+
 struct Teacher: Identifiable {
 	var id = UUID()
-	var classes = Array<String>()
+	var classes = Array<aClass>()
 	
 }
 
-//class Assignemnts: ObservableObject {
-//	var problems = Array<String>()
-//	var className = ""
-//	private var db = Firestore.firestore()
-//
-//	func fetchData() -> Void {
-//		db.collection("classes").collectionID("assignments").addSnapshotListener { (querySnapshot, error) in
-//			guard let documents = querySnapshot?.documents else {
-//				print("No documents") // the printing is done here
-//				return
-//			}
-//			for  queryDocumentSnapshot in documents {
-//				let data = queryDocumentSnapshot.data()
-//				self.aClass.name = data["name"] as? String ?? ""
-//				let assignmentsArray = data["problems"] as? Array ?? []
-//				for i in assignmentsArray {
-//					let docID = (i as? DocumentReference)?.documentID
-//					if(docID != nil) {
-//						self.aClass.problems.append(docID!)
-//
-//					}
-//				}
-//
-//
-//
-//			}
-//			
-//		}
-//	}
-//	func setClassName(className: String) {
-//		self.className = className
-//	}
-//}
-//
-//struct Assignment: Identifiable {
-//	var id = UUID()
-//	var name = ""
-//	var problems =  Array<String>()
-//
-//}
+struct aClass: Identifiable, Hashable {
+	var id = UUID()
+	var className  : String
+	var classCode  : String
+}
+
+
+struct Assignemnts:  View {
+	var aClass : aClass
+	
+	let db = Firestore.firestore()
+	
+	@State var assignments = Array<aAssignment>()
+	var body: some View {
+		Spacer().onAppear(perform: {
+			
+			db.collection("classes").document(aClass.classCode).collection("assignments")
+				.getDocuments() { (querySnapshot, err) in
+					if let err = err {
+						print("Error getting documents: \(err)")
+					} else {
+						for document in querySnapshot!.documents {
+							assignments.append(aAssignment.init(id: UUID.init(), name: document["name"] as! String, classID: document, aClass: aClass))
+						}
+					}
+				}
+		})
+	}
+}
+
+struct Assignment: Identifiable {
+	var id = UUID()
+	var name = ""
+	var classID : Any
+	var aClassHolder = aClass(className: "", classCode: "")
+	var assignments = Array<aAssignment>()
+
+}
+struct aAssignment: Identifiable {
+	var id = UUID()
+	var name : String
+	var classID : Any
+	var aClass : aClass
+	
+	
+}
+
+
+
+struct Problems:  View {
+	@EnvironmentObject var session: SessionStore
+	@Binding var aAssignment : aAssignment
+	let db = Firestore.firestore()
+	
+	var body: some View {
+		Spacer().onAppear(perform: {
+	
+			db.collection("classes").document(aAssignment.aClass.classCode).collection("assignments").document((aAssignment.classID as? String ?? "")).collection("problems")
+				.getDocuments() { (querySnapshot, err) in
+					if let err = err {
+						print("Error getting documents: \(err)")
+					} else {
+						for document in querySnapshot!.documents {
+							print(document)
+						}
+					}
+				}
+		})
+	}
+}
+
+struct Problem: Identifiable {
+	var id = UUID()
+	var name = ""
+	var aAssignmentHolder = aAssignment(id: UUID.init(), name: "", classID: (Any).self, aClass: aClass(className: "", classCode: ""))
+	var positive = 0
+	var negative = 0
+}
