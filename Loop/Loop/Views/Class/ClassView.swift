@@ -11,14 +11,20 @@ import Firebase
 
 
 struct ClassView: View {
+
 	@State var teacher = Teacher()
 	@State var isTeacher : Bool = false
+    @State var student = Student()
+    @State var isStudent : Bool = false
 	@EnvironmentObject var session: SessionStore
 	var db = Firestore.firestore()
 
 
     var body: some View {
 		TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher)
+        StudentViewModel(isStudent: $isStudent, student: $student)
+        
+        NavigationView{
 			VStack {
 
 				if(self.isTeacher) {
@@ -55,6 +61,42 @@ struct ClassView: View {
 					}
 
 				}
+                
+                if(self.isStudent) {
+                    Button(action: {},
+                           label: {
+                            NavigationLink(destination: AddClassView(existingClasses: self.student.classes).environmentObject(session)) {
+                                HStack( content:
+                                            {
+                                                Spacer()
+                                                Text("Add Class")
+                                                    .fontWeight(.medium)
+                                                    .foregroundColor(.white)
+                                                
+                                                Image(systemName: "plus.square.fill").font(Font.title.weight(.medium)).foregroundColor(.white);
+                                                Spacer()
+                                            })
+                                
+                                
+                            }.padding(.horizontal, 15.0).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
+                            
+                            
+                           })
+                    List {
+                        ForEach(self.student.classes, id: \.self) {aClass in
+                            //BaseCard(title: aClass, cellHeight: 200, cellWidth: 300)
+                            ClassCard(className: aClass, classCode: "hehe")
+                            //{
+                             //   Text("hehe")
+                           // }
+                            .padding(.vertical, 20.0)
+
+                            //                    Put link here to the class, and    You're going to want to pass in random generated code
+
+                        }
+                    }
+
+                }
 
 				else {
 					Text("Are you a Student or a Teacher?")
@@ -130,6 +172,7 @@ struct ClassView: View {
 			}
 
 	}
+    }
 }
 
 
