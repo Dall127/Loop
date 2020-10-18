@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-		BaseCard(title: "hello") {
-			Text("Hi")
+        BaseCard(title: "hello", cellHeight:150, cellWidth: 300) {
+			Text("Hi, Welcome to your Calculus 2 Class!, This is where you will be able to give feedback to your professors")
 		}
     }
 }
