@@ -7,45 +7,135 @@
 
 import SwiftUI
 import Firebase
-struct ClassView: View {
-	@EnvironmentObject var session: SessionStore
-	@ObservedObject var student = StudentViewModel()
-	@ObservedObject var teacher = TeacherViewModel()
 
-	@State var finishedRegistering = false
+
+
+struct ClassView: View {
+	@State var teacher = Teacher()
+	@State var isTeacher : Bool = false
+	@EnvironmentObject var session: SessionStore
+	var db = Firestore.firestore()
+
+
     var body: some View {
-		
-		VStack {
-			EmptyView()
-			if (student.student.classes.count > 0) {
-				ForEach(student.student.classes, id: \.self) {aClass in
-					Text(aClass)
+		TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher)
+			VStack {
+
+				if(self.isTeacher) {
+					Button(action: {},
+						   label: {
+							NavigationLink(destination: CreateClassView(existingClasses: self.teacher.classes).environmentObject(session)) {
+								HStack( content:
+											{
+												Spacer()
+												Text("Create Class")
+													.fontWeight(.medium)
+													.foregroundColor(.white)
+												
+												Image(systemName: "plus.square.fill").font(Font.title.weight(.medium)).foregroundColor(.white);
+												Spacer()
+											})
+								
+								
+							}.padding(.horizontal, 15.0).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
+							
+							
+						   })
+					List {
+						ForEach(self.teacher.classes, id: \.self) {aClass in
+							BaseCard(title: aClass, cellHeight: 200, cellWidth: 300)
+							{
+								Text("hehe")
+							}
+							.padding(.vertical, 20.0)
+
+							//					Put link here to the class, and	You're going to want to pass in random generated code
+
+						}
+					}
+
+				}
+
+				else {
+					Text("Are you a Student or a Teacher?")
+					Button(action: {
+						db.collection("teachers").document(session.session!.uid).setData([
+							"classes" : [ ]
+							
+						]) { err in
+							if let err = err {
+								print("Error writing document: \(err)")
+							} else {
+								print("Document successfully written!")
+							}
+						}
+					},
+					label: {
+						VStack {
+							Spacer()
+							HStack  {
+								Spacer()
+								VStack() {
+									Text("Teacher")
+										.font(.largeTitle)
+										.fontWeight(.medium)
+										.foregroundColor(.white)
+									Image(systemName: "person.fill").padding(.top, 10.0).font(Font.title.weight(.medium)).foregroundColor(.white)
+								}
+								
+								Spacer()
+							}
+							Spacer()
+						}
+						
+					}
+					).padding(.horizontal, 15.0).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
+					Button(action: {
+						db.collection("students").document(session.session!.uid).setData([
+							"classes" : [ ]
+							
+						]) { err in
+							if let err = err {
+								print("Error writing document: \(err)")
+							} else {
+								print("Document successfully written!")
+							}
+						}
+					},
+					label: {
+						VStack {
+							Spacer()
+							HStack  {
+								Spacer()
+								VStack() {
+									Text("Student")
+										.font(.largeTitle)
+										.fontWeight(.medium)
+										.foregroundColor(.white)
+									Image(systemName: "person.3.fill").padding(.top, 10.0).font(Font.title.weight(.medium)).foregroundColor(.white)
+								}
+								
+								Spacer()
+							}
+							Spacer()
+						}
+						
+					}
+					).padding(.horizontal, 15.0).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
+					
 				}
 	
-			}
-			else if (teacher.teacher.classes.count > 0) {
-				ForEach(teacher.teacher.classes, id: \.self) {aClass in
-					Text(aClass)
-				}
+				
 				
 			}
-			else {
-				Text("Hi")
-			}
-			
-		}.onAppear() {
-			self.student.setUID(UserID: session.session!.uid)
-			self.teacher.setUID(UserID: session.session!.uid)
-
-			self.student.fetchData()
-			self.teacher.fetchData()
-			
-			
-		}
-
 
 	}
 }
+
+
+
+
+
 
 struct ClassView_Previews: PreviewProvider {
     static var previews: some View {
