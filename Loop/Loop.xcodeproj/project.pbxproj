@@ -26,8 +26,10 @@
 		30CB50D7253C086200AA88CF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB50D6253C086200AA88CF /* Models.swift */; };
 		30CB5158253C448B00AA88CF /* CreateClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB5157253C448B00AA88CF /* CreateClassView.swift */; };
 		30CB515D253C674F00AA88CF /* BaseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB515C253C674F00AA88CF /* BaseCard.swift */; };
-		535E533C253CC70A00F17135 /* ProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1E253C0EE300B4886F /* ProblemView.swift */; };
+		45360A82253CCFA700B414A8 /* AddClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45360A81253CCFA700B414A8 /* AddClassView.swift */; };
+		45360A86253CF85700B414A8 /* ClassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F4656253C0A3F005C565C /* ClassCard.swift */; };
 		53A0B93B253A98F0007F4A8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */; };
+		53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F87C1B253C0EE300B4886F /* AssignmentView.swift */; };
 		7D581720E790325B4535A82D /* Pods_LoopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB3269FB02823C641120844 /* Pods_LoopTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,7 @@
 		32F1122B2431453E54A1BCCB /* Pods_Loop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2A8B2BDAD156EF4FDAD27C /* Pods-Loop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop.debug.xcconfig"; path = "Target Support Files/Pods-Loop/Pods-Loop.debug.xcconfig"; sourceTree = "<group>"; };
 		452F4656253C0A3F005C565C /* ClassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCard.swift; sourceTree = "<group>"; };
+		45360A81253CCFA700B414A8 /* AddClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassView.swift; sourceTree = "<group>"; };
 		4AF3DAE8EFE153BCAA5EEFD4 /* Pods-LoopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopTests.debug.xcconfig"; path = "Target Support Files/Pods-LoopTests/Pods-LoopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F09CD62CEF7D63824F9A8DE /* Pods-Loop-LoopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loop-LoopUITests.release.xcconfig"; path = "Target Support Files/Pods-Loop-LoopUITests/Pods-Loop-LoopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		53A0B93A253A98F0007F4A8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -279,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				30CB50C5253BD84900AA88CF /* ClassView.swift */,
+				45360A81253CCFA700B414A8 /* AddClassView.swift */,
 				30CB5157253C448B00AA88CF /* CreateClassView.swift */,
 			);
 			path = Class;
@@ -568,11 +572,13 @@
 				30CB5002253B5DD700AA88CF /* CreateUserView.swift in Sources */,
 				30CB5158253C448B00AA88CF /* CreateClassView.swift in Sources */,
 				30CB50C6253BD84900AA88CF /* ClassView.swift in Sources */,
+				45360A86253CF85700B414A8 /* ClassCard.swift in Sources */,
 				30CB515D253C674F00AA88CF /* BaseCard.swift in Sources */,
 				3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */,
 				3006BCDE253AA57000F8124C /* LoginView.swift in Sources */,
+				45360A82253CCFA700B414A8 /* AddClassView.swift in Sources */,
+				53F87C21253C0EE400B4886F /* AssignmentView.swift in Sources */,
 				3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */,
-				535E533C253CC70A00F17135 /* ProblemView.swift in Sources */,
 				3006BC7B253A88E200F8124C /* LoopApp.swift in Sources */,
 				30CB50D7253C086200AA88CF /* Models.swift in Sources */,
 			);
@@ -734,7 +740,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Loop/Preview Content\"";
-				DEVELOPMENT_TEAM = 72A3LW7FBX;
+				DEVELOPMENT_TEAM = 5X58XUL4N3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Loop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -742,7 +748,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheU.Loop.Guillermo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheULissaRamos.Loop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -757,7 +763,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Loop/Preview Content\"";
-				DEVELOPMENT_TEAM = 72A3LW7FBX;
+				DEVELOPMENT_TEAM = 5X58XUL4N3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Loop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -765,7 +771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheU.Loop.Guillermo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HackTheULissaRamos.Loop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
