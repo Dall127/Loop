@@ -6,11 +6,26 @@
 //
 
 import SwiftUI
+import Firebase
+import Combine
+
+
+	
 
 struct ContentView: View {
-    var body: some View {
-		BaseCard(Title: "hello", TextBody: "world")
-    }
+	@EnvironmentObject var session: SessionStore
+	
+	var body: some View {
+		if(session.session != nil) {
+			ClassView().environmentObject(session)
+		}
+		else{
+			LoginView().environmentObject(session)
+
+		}
+
+	
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
