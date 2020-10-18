@@ -33,8 +33,8 @@ struct BaseCard<Content>: View where Content: View {
         ZStack{
 			RoundedRectangle(cornerRadius: 10.0, style: .continuous)
 				.fill(Color.white)
-				.frame(width: cellWidth, height:cellHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .shadow(color:.gray, radius: 10,x:-7,y:7).overlay(
+				.frame(width: cellWidth, height:cellHeight)
+                .overlay(
 					VStack{
 						HStack {
 							Text(title)

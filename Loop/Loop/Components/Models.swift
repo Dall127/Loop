@@ -6,102 +6,113 @@
 //
 
 
-
+import SwiftUI
 import Foundation
 import FirebaseFirestore
+import SwiftUI
+struct StudentViewModel: View {
+	@EnvironmentObject var session: SessionStore
+	@Binding var isStudent : Bool
+	@Binding var student : Student
+	let db = Firestore.firestore()
 
-class StudentViewModel: ObservableObject {
-	var UserID = ""
-	var isStudent = false
-	@Published var student = Student()
-	private var db = Firestore.firestore()
-	
-	func fetchData() -> Void {
-		db.collection("students").addSnapshotListener { (querySnapshot, error) in
-			guard let documents = querySnapshot?.documents else {
-				print("No documents") // the printing is done here
-				return
-			}
-			for  queryDocumentSnapshot in documents {
-				let data = queryDocumentSnapshot.data()
-				let userID = data["UserID"] as? String ?? ""
-				if(userID == self.UserID) {
-					self.student.userID = userID
-					let tempArray = data["Classes"] as? Array ?? []
-					for i in tempArray {
-						let docID = (i as? DocumentReference)?.documentID
-						if(docID != nil) {
-							self.student.classes.append(docID!)
-							
-						}
+	var body: some View {
+		Spacer().onAppear(perform: {
+			db.collection("students").document(session.session!.uid)
+				.addSnapshotListener { documentSnapshot, error in
+					guard let document = documentSnapshot else {
+						print("Error fetching document: \(error!)")
+						return
+					}
+					guard let data = document.data() else {
+						print("Document data was empty.")
+						return
 					}
 					self.isStudent = true
-					return
-				}
-				
-				
-			
-
-			}
-			
-		}
-	}
-	func setUID(UserID: String) {
-		self.UserID = UserID
-	}
-}
-struct Student: Identifiable {
-	var id = UUID()
-	var userID = ""
-	var classes = Array<String>()
-
-}
-
-
-class TeacherViewModel: ObservableObject {
-	var UserID = ""
-	var isTeacher = false
-	@Published var teacher = Teacher()
-	private var db = Firestore.firestore()
-	
-	func fetchData() -> Void {
-		db.collection("teachers").addSnapshotListener { (querySnapshot, error) in
-			guard let documents = querySnapshot?.documents else {
-				print("No documents") // the printing is done here
-				return
-			}
-			for  queryDocumentSnapshot in documents {
-				let data = queryDocumentSnapshot.data()
-				let userID = data["UserID"] as? String ?? ""
-
-				if(userID == self.UserID) {
-					self.teacher.userID = userID
-					let tempArray = data["Classes"] as? Array ?? []
+					self.student.classes = []
+					let tempArray = data["classes"] as? Array ?? []
 					for i in tempArray {
 						let docID = (i as? DocumentReference)?.documentID
-						if(docID != nil) {
-							self.teacher.classes.append(docID!)
-							
-						}
-					
+						db.collection("classes").document(docID!)
+							.addSnapshotListener { documentSnapshot, error in
+								guard let document = documentSnapshot else {
+									print("Error fetching document: \(error!)")
+									return
+								}
+								guard let data = document.data() else {
+									print("Document data was empty.")
+									return
+								}
+								let classData = data["name"]
+								self.student.classes.append(classData as! String)
+								
+								
+							}
+					}
+				}
+		})
+	}
+}
+
+								
+
+	
+//self.student.classes.append(docID!)
+
+	
+	
+struct Student: Identifiable {
+	var id = UUID()
+	var classes = Array<String>()
+	
+}
+
+
+struct TeacherViewModel: View {
+	@EnvironmentObject var session: SessionStore
+	@Binding var isTeacher : Bool
+	@Binding var teacher : Teacher
+	let db = Firestore.firestore()
+	
+	var body: some View {
+		Spacer().onAppear(perform: {
+			db.collection("teachers").document(session.session!.uid)
+				.addSnapshotListener { documentSnapshot, error in
+					guard let document = documentSnapshot else {
+						print("Error fetching document: \(error!)")
+						return
+					}
+					guard let data = document.data() else {
+						print("Document data was empty.")
+						return
 					}
 					self.isTeacher = true
-					return
+					self.teacher.classes = []
+					let tempArray = data["classes"] as? Array ?? []
+					for i in tempArray {
+						let docID = (i as? DocumentReference)?.documentID
+						db.collection("classes").document(docID!)
+							.addSnapshotListener { documentSnapshot, error in
+								guard let document = documentSnapshot else {
+									print("Error fetching document: \(error!)")
+									return
+								}
+								guard let data = document.data() else {
+									print("Document data was empty.")
+									return
+								}
+								let classData = data["name"]
+								self.teacher.classes.append(classData as! String)
+
+								
+							}
+					}
 				}
-				
-				
-				
-			}
-			
-		}
-	}
-	func setUID(UserID: String) {
-		self.UserID = UserID
+		})
 	}
 }
 struct Teacher: Identifiable {
 	var id = UUID()
-	var userID = ""
 	var classes = Array<String>()
 	
 }
