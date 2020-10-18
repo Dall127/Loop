@@ -24,7 +24,7 @@ struct ClassView: View {
 		TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher)
         StudentViewModel(isStudent: $isStudent, student: $student)
         
-        NavigationView{
+        NavigationView {
 			VStack {
 
 				if(self.isTeacher) {
@@ -52,10 +52,7 @@ struct ClassView: View {
 							NavigationLink(
 								destination: AssignmentsView(aAssignmentHolder: aAssignment(name: "", classID: Any.self, aClass: aClass)),
 								label: {
-									BaseCard(aClassHolder: aClass, cellHeight: 200, cellWidth: 300)
-									{
-										Text("hehe")
-									}
+									ClassCard(aClassHolder: aClass)
 									.padding(.vertical, 20.0)
 								})
 							
@@ -88,11 +85,7 @@ struct ClassView: View {
                            })
                     List {
                         ForEach(self.student.classes, id: \.self) {aClass in
-                            //BaseCard(title: aClass, cellHeight: 200, cellWidth: 300)
-                            ClassCard(className: aClass, classCode: "hehe")
-                            //{
-                             //   Text("hehe")
-                           // }
+							ClassCard(aClassHolder: aClass)
                             .padding(.vertical, 20.0)
 
                             //                    Put link here to the class, and    You're going to want to pass in random generated code

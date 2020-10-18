@@ -12,7 +12,7 @@ struct AddClassView: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var session: SessionStore
 
-    var existingClasses : Array<String>
+    var existingClasses : Array<aClass>
     @State var randomID = ""
     @State var codeName = ""
     @State var showingAlert = false
@@ -92,6 +92,6 @@ struct AddClassView: View {
 
 struct AddClassView_Previews: PreviewProvider {
     static var previews: some View {
-        AddClassView(existingClasses: Array<String>())
+        AddClassView(existingClasses: Array<aClass>())
     }
 }

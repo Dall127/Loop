@@ -19,7 +19,7 @@ struct StudentViewModel: View {
 	var body: some View {
 		Spacer().onAppear(perform: {
 			db.collection("students").document(session.session!.uid)
-				.addSnapshotListener { documentSnapshot, error in
+				.addSnapshotListener  { documentSnapshot, error in
 					guard let document = documentSnapshot else {
 						print("Error fetching document: \(error!)")
 						return
@@ -43,12 +43,14 @@ struct StudentViewModel: View {
 									return
 								}
 								let classData = data["name"]
-								self.student.classes.append(classData as! String)
+								self.student.classes.append(aClass(className: classData as! String, classCode: docID!))
 								
 								
 							}
 					}
 					self.isStudent = true
+
+				
 
 				}
 		})
@@ -64,7 +66,7 @@ struct StudentViewModel: View {
 	
 struct Student: Identifiable {
 	var id = UUID()
-	var classes = Array<String>()
+	var classes = Array<aClass>()
 	
 }
 

@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ClassCard: View {
-     
+    
+	init(aClassHolder: aClass) {
+		self.className = aClassHolder.className
+		self.classCode = aClassHolder.classCode
+	}
+	
         let className: String
        let classCode: String
         
         
-        
-    init(className:String, classCode: String){
-        self.className =  className
-        self.classCode =  classCode
-    }
+
     var body: some View {
         VStack {
             Rectangle()
@@ -54,6 +55,6 @@ struct ClassCard: View {
 
 struct ClassCard_Previews: PreviewProvider {
     static var previews: some View {
-        ClassCard(className: "CS 2420: Algorithms & Data Structures - 017", classCode: "bdu2Jm")
+		ClassCard(aClassHolder: aClass(className: "", classCode: ""))
     }
 }
