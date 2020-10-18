@@ -19,6 +19,7 @@
 		3006BCE3253AA58300F8124C /* NueromorphicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCE2253AA58300F8124C /* NueromorphicButton.swift */; };
 		3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006BCE7253AA59700F8124C /* UIColorBridge.swift */; };
 		3006BCF6253AB33400F8124C /* Logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3006BCF5253AB33400F8124C /* Logo.svg */; };
+		30C6EBCF253C83B200A16066 /* CreateClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6EBCE253C83B200A16066 /* CreateClassView.swift */; };
 		30CB5002253B5DD700AA88CF /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB5001253B5DD700AA88CF /* CreateUserView.swift */; };
 		30CB50C0253BD33800AA88CF /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB50BF253BD33800AA88CF /* SwiftUIView.swift */; };
 		30CB50C6253BD84900AA88CF /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB50C5253BD84900AA88CF /* ClassView.swift */; };
@@ -62,6 +63,7 @@
 		3006BCE2253AA58300F8124C /* NueromorphicButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NueromorphicButton.swift; sourceTree = "<group>"; };
 		3006BCE7253AA59700F8124C /* UIColorBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorBridge.swift; path = Loop/Stylings/UIColorBridge.swift; sourceTree = SOURCE_ROOT; };
 		3006BCF5253AB33400F8124C /* Logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Logo.svg; sourceTree = "<group>"; };
+		30C6EBCE253C83B200A16066 /* CreateClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassView.swift; sourceTree = "<group>"; };
 		30CB5001253B5DD700AA88CF /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		30CB50BF253BD33800AA88CF /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		30CB50C5253BD84900AA88CF /* ClassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				30CB50C5253BD84900AA88CF /* ClassView.swift */,
+				30C6EBCE253C83B200A16066 /* CreateClassView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				30CB50CB253BF09C00AA88CF /* CustomNavigator.swift in Sources */,
 				30CB50C0253BD33800AA88CF /* SwiftUIView.swift in Sources */,
 				30CB5002253B5DD700AA88CF /* CreateUserView.swift in Sources */,
+				30C6EBCF253C83B200A16066 /* CreateClassView.swift in Sources */,
 				30CB50C6253BD84900AA88CF /* ClassView.swift in Sources */,
 				3006BCE8253AA59700F8124C /* UIColorBridge.swift in Sources */,
 				3006BCDE253AA57000F8124C /* LoginView.swift in Sources */,

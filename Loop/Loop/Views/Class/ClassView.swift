@@ -12,39 +12,110 @@ import Firebase
 
 struct ClassView: View {
 	@EnvironmentObject var session: SessionStore
-	@ObservedObject var student = StudentViewModel()
-	@ObservedObject var teacher = TeacherViewModel()
+	let db = Firestore.firestore()
+
+	@State var teacher = Teacher()
+	@State var student = Student()
+
+	@State var isTeacher = false
+	@State var isStudent = false
 
     var body: some View {
-		
-		VStack {
-			EmptyView()
-			if (student.student.classes.count > 0) {
-				ForEach(student.student.classes, id: \.self) {aClass in
-					Text(aClass)
-//					Put link here to the class, and	You're going to want to create an observed object you can pass to the assignments view
+//		TeacherViewModel()
+//		StudentViewModel()
+		NavigationView {
+			VStack {
+				TeacherViewModel(isTeacher: $isTeacher, teacher: $teacher)
+
+				if(self.isTeacher) {
+					Button(action: {},
+					
+					label: {
+						NavigationLink(destination: CreateClassView().environmentObject(session)) {
+							HStack {
+								Spacer()
+								Text("Create Class")
+									.fontWeight(.medium)
+									.foregroundColor(.white)
+									.padding(.trailing, 20.0);
+								Image(systemName: "plus.square.fill").padding(.leading, 20.0).font(Font.title.weight(.medium)).foregroundColor(.white)
+								Spacer()
+							}
+						}
+							
+						
+						
+					}).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue)).padding(.horizontal, 20)
+					ForEach(self.teacher.classes, id: \.self){aClass in
+						Text(aClass)
+					}
 				}
-
-			}
-			else if (teacher.teacher.classes.count > 0) {
-				ForEach(teacher.teacher.classes, id: \.self) {aClass in
-					Text(aClass)
-					//					Put link here to the class, and	You're going to want to pass in random generated code
-
+				else if(self.isStudent) {
+					EmptyView()
 				}
-
-			}
-
-			else {
-				Text("Hi")
+				else {
+					Group {
+						Text("Pick User Type")
+						Button(action: {
+							db.collection("teachers").document(session.session!.uid).setData([
+								"classes": [],
+								
+							]) { err in
+								if let err = err {
+									print("Error writing document: \(err)")
+								} else {
+									print("Document successfully written!")
+								}
+								self.isTeacher = true
+							}
+							
+						},
+						
+						label: {
+							
+							HStack( content: {
+								Text("Teacher")
+									.fontWeight(.medium)
+									.foregroundColor(.white)
+									.padding(.trailing, 20.0);
+								Image(systemName: "person.fill").padding(.leading, 20.0).font(Font.title.weight(.medium)).foregroundColor(.white)
+								
+							})
+							
+						}).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
+						Button(action: {
+							db.collection("students").document(session.session!.uid).setData([
+								"classes": [],
+								
+							]) { err in
+								if let err = err {
+									print("Error writing document: \(err)")
+								} else {
+									print("Document successfully written!")
+								}
+								self.isStudent = true
+							}
+							
+						},
+						
+						label: {
+							
+							HStack( content: {
+								Text("Students")
+									.fontWeight(.medium)
+									.foregroundColor(.white)
+									.padding(.trailing, 20.0);
+								Image(systemName: "person.3.fill").padding(.leading, 20.0).font(Font.title.weight(.medium)).foregroundColor(.white)
+								
+							})
+							
+						}).buttonStyle(NeumorphicButtonStyle(bgColor: .systemBlue))
+					}
+					
+				}
 			}
 			
-		}.onAppear() {
-			self.student.setUID(UserID: session.session!.uid)
-			self.teacher.setUID(UserID: session.session!.uid)
-			self.student.fetchData()
-			self.teacher.fetchData()
-
+		}
 	}
 }
 
